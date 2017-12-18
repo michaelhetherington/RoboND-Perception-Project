@@ -40,11 +40,23 @@ My final yaml output files are:
   - [output_2.yaml](https://github.com/michaelhetherington/RoboND-Perception-Project/blob/master/pr2_robot/scripts/output_2.yaml) with success rate of 80%
   - [output_3.yaml](https://github.com/michaelhetherington/RoboND-Perception-Project/blob/master/pr2_robot/scripts/output_3.yaml) with a success rate of 87.5%
 
-The following image is an example of the objects being recognised by the PR2 Robot camera in RViz for Test World 1.
+The following images are illustrations of the objects being recognised by the PR2 Robot camera in RViz for __Test World 1__.
 
 ![demo-1](https://github.com/michaelhetherington/RoboND-Perception-Project/blob/master/writeup_images/recog_test_robot.png)
 
 ![demo-2](https://github.com/michaelhetherington/RoboND-Perception-Project/blob/master/writeup_images/recog_test_camera.png)
+
+The following images are illustrations of the objects being recognised by the PR2 Robot camera in RViz for __Test World 2__.
+
+![demo-1](https://github.com/michaelhetherington/RoboND-Perception-Project/blob/master/writeup_images/recog_test2_robot.png)
+
+![demo-2](https://github.com/michaelhetherington/RoboND-Perception-Project/blob/master/writeup_images/recog_test2_camera.png)
+
+The following images are illustrations of the objects being recognised by the PR2 Robot camera in RViz for __Test World 3__.
+
+![demo-1](https://github.com/michaelhetherington/RoboND-Perception-Project/blob/master/writeup_images/recog_test3_robot.png)
+
+![demo-2](https://github.com/michaelhetherington/RoboND-Perception-Project/blob/master/writeup_images/recog_test3_camera.png)
 
 The following discussed the finer details of my code implementation.
 
@@ -81,7 +93,7 @@ The steps for completing the clustering for segmentation, as outlined and commen
 The steps for completing the model training and cluster classification, as outlined and commented throughout my code, are:
   1. Capture the features of the objects that can be found in the scene. This was undertaken with helper code from Exercise 3.
   2. Train the classification model using the training_set data. Load the model data in to the code.
-  3. Classify the clusters by first computing feature vectors and then using the trained classification model (previous step) to classify the objects
+  3. Classify the clusters by first computing feature vectors and then using the trained classification model (previous step) to classify the objects. The feature vectors are calculated using the [features.py](https://github.com/michaelhetherington/RoboND-Perception-Project/blob/master/pr2_robot/scripts/features.py) script generated during the perception exercises and (typically) stored in the sensor_stick repository if following the Udacity course structure.
   4. Publish messages to ROS containing labels for the objects in the Test World scene. Must create a publishing service.
 
 #### Create function to request PickPlace service
