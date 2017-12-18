@@ -249,7 +249,7 @@ def pr2_mover(object_list):
         centroids.append(np.mean(points_arr, axis=0)[:3])
 
     # TODO: ensure test_scene_num is correct for the scene being simulated
-    test_scene_num.data  = int(1) # change this to suit the world being simulated
+    test_scene_num.data  = int(3) # change this to suit the world being simulated
 
     # TODO: Create a list of dictionaries (made with make_yaml_dict()) for later output to yaml format
     dict_list = []
@@ -278,19 +278,19 @@ def pr2_mover(object_list):
         # Wait for 'pick_place_routine' service to come up
         rospy.wait_for_service('pick_place_routine')
 
-#        try:
-#            pick_place_routine = rospy.ServiceProxy('pick_place_routine', PickPlace)
+        try:
+            pick_place_routine = rospy.ServiceProxy('pick_place_routine', PickPlace)
 
             # TODO: Insert your message variables to be sent as a service request
-#            resp = pick_place_routine(test_scene_num, object_name, arm_name, pick_pose, place_pose)
+            resp = pick_place_routine(test_scene_num, object_name, arm_name, pick_pose, place_pose)
 
-#            print ("Response: ",resp.success)
+            print ("Response: ",resp.success)
 
-#        except rospy.ServiceException, e:
-#            print "Service call failed: %s"%e
+        except rospy.ServiceException, e:
+            print "Service call failed: %s"%e
 
     # TODO: Output your request parameters into output yaml file
-    send_to_yaml('output_2.yaml', dict_list)
+    send_to_yaml('output_3.yaml', dict_list)
 
 
 if __name__ == '__main__':
